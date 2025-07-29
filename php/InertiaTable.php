@@ -1,6 +1,6 @@
 <?php
 
-namespace Krismawan4\LaravelQueryBuilderInertiaJs;
+namespace Krismawan4\InertiaTables;
 
 use Illuminate\Http\Request;
 use Illuminate\Pagination\Paginator;

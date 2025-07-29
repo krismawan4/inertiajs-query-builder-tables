@@ -5,7 +5,7 @@ namespace App\Http;
 use App\Models\Company;
 use App\Models\User;
 use Inertia\Inertia;
-use Krismawan4\LaravelQueryBuilderInertiaJs\InertiaTable;
+use Krismawan4\InertiaTables\InertiaTable;
 use Spatie\QueryBuilder\QueryBuilder;
 
 class TwoTablesSpatie

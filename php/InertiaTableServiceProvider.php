@@ -1,6 +1,6 @@
 <?php
 
-namespace Krismawan4\LaravelQueryBuilderInertiaJs;
+namespace Krismawan4\InertiaTables;
 
 use Illuminate\Support\ServiceProvider;
 use Inertia\Response as InertiaResponse;

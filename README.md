@@ -66,7 +66,7 @@ With the `searchInput` method, you can specify which attributes are searchable. 
 Though it's enough to pass in the column key, you may specify a custom label and default value.
 
 ```php
-use Krismawan4\LaravelQueryBuilderInertiaJs\InertiaTable;
+use Krismawan4\InertiaTables\InertiaTable;
 
 Inertia::render('Page/Index')->table(function (InertiaTable $table) {
     $table->searchInput('name');
@@ -160,7 +160,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Collection;
 use Inertia\Inertia;
-use Krismawan4\LaravelQueryBuilderInertiaJs\InertiaTable;
+use Krismawan4\InertiaTables\InertiaTable;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 

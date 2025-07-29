@@ -6,7 +6,7 @@ use App\Http\Resources\UserResource;
 use App\Models\User;
 use Illuminate\Support\Collection;
 use Inertia\Inertia;
-use Krismawan4\LaravelQueryBuilderInertiaJs\InertiaTable;
+use Krismawan4\InertiaTables\InertiaTable;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 

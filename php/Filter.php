@@ -1,6 +1,6 @@
 <?php
 
-namespace Krismawan4\LaravelQueryBuilderInertiaJs;
+namespace Krismawan4\InertiaTables;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;
