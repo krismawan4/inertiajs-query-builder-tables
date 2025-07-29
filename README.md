@@ -16,7 +16,7 @@ The new package has a modern foundation and many requested features like **date 
 
 ---
 
-This package provides a *DataTables-like* experience for [Inertia.js](https://inertiajs.com/) with support for searching, filtering, sorting, toggling columns, and pagination. It generates URLs that can be consumed by Spatie's excellent [Laravel Query Builder](https://github.com/spatie/laravel-query-builder) package, with no additional logic needed. The components are styled with [Tailwind CSS 3.0](https://tailwindcss.com/), but it's fully customizable with slots. The data refresh logic is based on Inertia's [Ping CRM demo](https://github.com/inertiajs/pingcrm).
+This package provides a _DataTables-like_ experience for [Inertia.js](https://inertiajs.com/) with support for searching, filtering, sorting, toggling columns, and pagination. It generates URLs that can be consumed by Spatie's excellent [Laravel Query Builder](https://github.com/spatie/laravel-query-builder) package, with no additional logic needed. The components are styled with [Tailwind CSS 3.0](https://tailwindcss.com/), but it's fully customizable with slots. The data refresh logic is based on Inertia's [Ping CRM demo](https://github.com/inertiajs/pingcrm).
 
 ![Inertia.js Table for Laravel Query Builder](https://user-images.githubusercontent.com/8403149/177773377-86c32d69-8f86-47e4-8063-ea227e480d10.mp4)
 
@@ -26,22 +26,22 @@ This package provides a *DataTables-like* experience for [Inertia.js](https://in
 
 ## Features
 
-* Auto-fill: auto generates `thead` and `tbody` with support for custom cells
-* Global Search
-* Search per field
-* Select filters
-* Toggle columns
-* Sort columns
-* Pagination (support for Eloquent/API Resource/Simple/Cursor)
-* Automatically updates the query string (by using [Inertia's replace](https://inertiajs.com/manual-visits#browser-history) feature)
+-   Auto-fill: auto generates `thead` and `tbody` with support for custom cells
+-   Global Search
+-   Search per field
+-   Select filters
+-   Toggle columns
+-   Sort columns
+-   Pagination (support for Eloquent/API Resource/Simple/Cursor)
+-   Automatically updates the query string (by using [Inertia's replace](https://inertiajs.com/manual-visits#browser-history) feature)
 
 ## Compatibility
 
-* [Vue 3](https://v3.vuejs.org/guide/installation.html)
-* [Laravel 9](https://laravel.com/)
-* [Inertia.js](https://inertiajs.com/)
-* [Tailwind CSS v3](https://tailwindcss.com/) + [Forms plugin](https://github.com/tailwindlabs/tailwindcss-forms)
-* PHP 8.0+
+-   [Vue 3](https://v3.vuejs.org/guide/installation.html)
+-   [Laravel 9](https://laravel.com/)
+-   [Inertia.js](https://inertiajs.com/)
+-   [Tailwind CSS v3](https://tailwindcss.com/) + [Forms plugin](https://github.com/tailwindlabs/tailwindcss-forms)
+-   PHP 8.0+
 
 **Note**: There is currently an [issue](https://github.com/protonemedia/inertiajs-tables-laravel-query-builder/issues/69) with using this package with Vite!
 
@@ -63,11 +63,10 @@ The package will automatically register the Service Provider which provides a `t
 
 With the `searchInput` method, you can specify which attributes are searchable. Search queries are passed to the URL query as a `filter`. This integrates seamlessly with the [filtering feature](https://spatie.be/docs/laravel-query-builder/v5/features/filtering) of the Laravel Query Builder package.
 
-
 Though it's enough to pass in the column key, you may specify a custom label and default value.
 
 ```php
-use ProtoneMedia\LaravelQueryBuilderInertiaJs\InertiaTable;
+use Krismawan4\LaravelQueryBuilderInertiaJs\InertiaTable;
 
 Inertia::render('Page/Index')->table(function (InertiaTable $table) {
     $table->searchInput('name');
@@ -95,7 +94,7 @@ Inertia::render('Page/Index')->table(function (InertiaTable $table) {
 });
 ```
 
-The `selectFilter` will, by default, add a *no filter* option to the array. You may disable this or specify a custom label for it.
+The `selectFilter` will, by default, add a _no filter_ option to the array. You may disable this or specify a custom label for it.
 
 ```php
 Inertia::render('Page/Index')->table(function (InertiaTable $table) {
@@ -161,7 +160,7 @@ namespace App\Http\Controllers;
 use App\Models\User;
 use Illuminate\Support\Collection;
 use Inertia\Inertia;
-use ProtoneMedia\LaravelQueryBuilderInertiaJs\InertiaTable;
+use Krismawan4\LaravelQueryBuilderInertiaJs\InertiaTable;
 use Spatie\QueryBuilder\AllowedFilter;
 use Spatie\QueryBuilder\QueryBuilder;
 
@@ -218,10 +217,8 @@ Add the repository path to the `content` array of your [Tailwind configuration f
 
 ```js
 module.exports = {
-  content: [
-    './node_modules/@protonemedia/inertiajs-tables-laravel-query-builder/**/*.{js,vue}',
-  ]
-}
+    content: ["./node_modules/@protonemedia/inertiajs-tables-laravel-query-builder/**/*.{js,vue}"],
+};
 ```
 
 #### Table component
@@ -232,11 +229,11 @@ To use the `Table` component and all its related features, you must import the `
 <script setup>
 import { Table } from "@protonemedia/inertiajs-tables-laravel-query-builder";
 
-defineProps(["users"])
+defineProps(["users"]);
 </script>
 
 <template>
-  <Table :resource="users" />
+    <Table :resource="users" />
 </template>
 ```
 
@@ -244,7 +241,7 @@ The `resource` property automatically detects the data and additional pagination
 
 ```vue
 <template>
-  <Table :data="users.data" :meta="users.meta" />
+    <Table :data="users.data" :meta="users.meta" />
 </template>
 ```
 
@@ -252,22 +249,19 @@ If you want to manually render the table, like in v1 of this package, you may us
 
 ```vue
 <template>
-  <Table :meta="users">
-    <template #head>
-      <tr>
-        <th>User</th>
-      </tr>
-    </template>
+    <Table :meta="users">
+        <template #head>
+            <tr>
+                <th>User</th>
+            </tr>
+        </template>
 
-    <template #body>
-      <tr
-        v-for="(user, key) in users.data"
-        :key="key"
-      >
-        <td>{{ user.name }}</td>
-      </tr>
-    </template>
-  </Table>
+        <template #body>
+            <tr v-for="(user, key) in users.data" :key="key">
+                <td>{{ user.name }}</td>
+            </tr>
+        </template>
+    </Table>
 </template>
 ```
 
@@ -275,41 +269,34 @@ The `Table` has some additional properties to tweak its front-end behaviour.
 
 ```vue
 <template>
-  <Table
-    :striped="true"
-    :prevent-overlapping-requests="false"
-    :input-debounce-ms="1000"
-    :preserve-scroll="true"
-  />
+    <Table :striped="true" :prevent-overlapping-requests="false" :input-debounce-ms="1000" :preserve-scroll="true" />
 </template>
 ```
 
-| Property | Description | Default |
-| --- | --- | --- |
-| striped | Adds a *striped* layout to the table. | `false` |
-| preventOverlappingRequests | Cancels a previous visit on new user input to prevent an inconsistent state. | `true` |
-| inputDebounceMs | Number of ms to wait before refreshing the table on user input. | 350 |
-| preserveScroll | Configures the [Scroll preservation](https://inertiajs.com/scroll-management#scroll-preservation) behavior. You may also pass `table-top` to this property to scroll to the top of the table on new data. | false |
+| Property                   | Description                                                                                                                                                                                               | Default |
+| -------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------- |
+| striped                    | Adds a _striped_ layout to the table.                                                                                                                                                                     | `false` |
+| preventOverlappingRequests | Cancels a previous visit on new user input to prevent an inconsistent state.                                                                                                                              | `true`  |
+| inputDebounceMs            | Number of ms to wait before refreshing the table on user input.                                                                                                                                           | 350     |
+| preserveScroll             | Configures the [Scroll preservation](https://inertiajs.com/scroll-management#scroll-preservation) behavior. You may also pass `table-top` to this property to scroll to the top of the table on new data. | false   |
 
 #### Custom column cells
 
-When using *auto-fill*, you may want to transform the presented data for a specific column while leaving the other columns untouched. For this, you may use a cell template. This example is taken from the [Example Controller](#example-controller) above.
+When using _auto-fill_, you may want to transform the presented data for a specific column while leaving the other columns untouched. For this, you may use a cell template. This example is taken from the [Example Controller](#example-controller) above.
 
 ```vue
 <template>
-  <Table :resource="users">
-    <template #cell(actions)="{ item: user }">
-      <a :href="`/users/${user.id}/edit`">
-        Edit
-      </a>
-    </template>
-  </Table>
+    <Table :resource="users">
+        <template #cell(actions)="{ item: user }">
+            <a :href="`/users/${user.id}/edit`"> Edit </a>
+        </template>
+    </Table>
 </template>
 ```
 
 #### Multiple tables per page
 
-You may want to use more than one table component per page. Displaying the data is easy, but using features like filtering, sorting, and pagination requires a slightly different setup. For example, by default, the `page` query key is used for paginating the data set, but now you want two different keys for each table. Luckily, this package takes care of that and even provides a helper method to support Spatie's query package. To get this to work, you need to *name* your tables.
+You may want to use more than one table component per page. Displaying the data is easy, but using features like filtering, sorting, and pagination requires a slightly different setup. For example, by default, the `page` query key is used for paginating the data set, but now you want two different keys for each table. Luckily, this package takes care of that and even provides a helper method to support Spatie's query package. To get this to work, you need to _name_ your tables.
 
 Let's take a look at Spatie's `QueryBuilder`. In this example, there's a table for the companies and a table for the users. We name the tables accordingly. So first, call the static `updateQueryBuilderParameters` method to tell the package to use a different set of query parameters. Now, `filter` becomes `companies_filter`, `column` becomes `companies_column`, and so forth. Secondly, change the `pageName` of the database paginator.
 
@@ -356,27 +343,19 @@ return Inertia::render('TwoTables', [
 });
 ```
 
-Lastly, pass the correct `name` property to each table in the Vue template. Optionally, you may set the `preserve-scroll` property to `table-top`. This makes sure to scroll to the top of the table on new data. For example, when changing the page of the *second* table, you want to scroll to the top of the table, instead of the top of the page.
+Lastly, pass the correct `name` property to each table in the Vue template. Optionally, you may set the `preserve-scroll` property to `table-top`. This makes sure to scroll to the top of the table on new data. For example, when changing the page of the _second_ table, you want to scroll to the top of the table, instead of the top of the page.
 
 ```vue
 <script setup>
 import { Table } from "@protonemedia/inertiajs-tables-laravel-query-builder";
 
-defineProps(["companies", "users"])
+defineProps(["companies", "users"]);
 </script>
 
 <template>
-  <Table
-    :resource="companies"
-    name="companies"
-    preserve-scroll="table-top"
-  />
+    <Table :resource="companies" name="companies" preserve-scroll="table-top" />
 
-  <Table
-    :resource="users"
-    name="users"
-    preserve-scroll="table-top"
-  />
+    <Table :resource="users" name="users" preserve-scroll="table-top" />
 </template>
 ```
 
@@ -388,13 +367,13 @@ You can override the default pagination translations with the `setTranslations` 
 import { setTranslations } from "@protonemedia/inertiajs-tables-laravel-query-builder";
 
 setTranslations({
-  next: "Next",
-  no_results_found: "No results found",
-  of: "of",
-  per_page: "per page",
-  previous: "Previous",
-  results: "results",
-  to: "to"
+    next: "Next",
+    no_results_found: "No results found",
+    of: "of",
+    per_page: "per page",
+    previous: "Previous",
+    results: "results",
+    to: "to",
 });
 ```
 
@@ -402,32 +381,29 @@ setTranslations({
 
 The `Table.vue` has several slots that you can use to inject your own implementations.
 
-| Slot | Description |
-| --- | --- |
-| tableFilter | The location of the button + dropdown to select filters. |
-| tableGlobalSearch | The location of the input element that handles the global search. |
-| tableReset | The location of the button that resets the table. |
-| tableAddSearchRow | The location of the button + dropdown to add additional search rows. |
-| tableColumns | The location of the button + dropdown to toggle columns. |
-| tableSearchRows | The location of the input elements that handle the additional search rows. |
-| tableWrapper | The component that *wraps* the table element, handling overflow, shadow, padding, etc. |
-| table | The actual table element. |
-| head | The location of the table header. |
-| body | The location of the table body.  |
-| pagination | The location of the paginator. |
+| Slot              | Description                                                                            |
+| ----------------- | -------------------------------------------------------------------------------------- |
+| tableFilter       | The location of the button + dropdown to select filters.                               |
+| tableGlobalSearch | The location of the input element that handles the global search.                      |
+| tableReset        | The location of the button that resets the table.                                      |
+| tableAddSearchRow | The location of the button + dropdown to add additional search rows.                   |
+| tableColumns      | The location of the button + dropdown to toggle columns.                               |
+| tableSearchRows   | The location of the input elements that handle the additional search rows.             |
+| tableWrapper      | The component that _wraps_ the table element, handling overflow, shadow, padding, etc. |
+| table             | The actual table element.                                                              |
+| head              | The location of the table header.                                                      |
+| body              | The location of the table body.                                                        |
+| pagination        | The location of the paginator.                                                         |
 
 Each slot is provided with props to interact with the parent `Table` component.
 
 ```vue
 <template>
-  <Table>
-    <template v-slot:tableGlobalSearch="slotProps">
-      <input
-        placeholder="Custom Global Search Component..."
-        @input="slotProps.onChange($event.target.value)"
-      />
-    </template>
-  </Table>
+    <Table>
+        <template v-slot:tableGlobalSearch="slotProps">
+            <input placeholder="Custom Global Search Component..." @input="slotProps.onChange($event.target.value)" />
+        </template>
+    </Table>
 </template>
 ```
 
@@ -452,28 +428,28 @@ php artisan dusk
 
 ### Server-side
 
-* The `addColumn` method has been renamed to `column`.
-* The `addFilter` method has been renamed to `selectFilter`.
-* The `addSearch` method has been renamed to `searchInput`.
-* For all renamed methods, check out the arguments as some have been changed.
-* The `addColumns` and `addSearchRows` methods have been removed.
-* Global Search is not enabled by default anymore.
+-   The `addColumn` method has been renamed to `column`.
+-   The `addFilter` method has been renamed to `selectFilter`.
+-   The `addSearch` method has been renamed to `searchInput`.
+-   For all renamed methods, check out the arguments as some have been changed.
+-   The `addColumns` and `addSearchRows` methods have been removed.
+-   Global Search is not enabled by default anymore.
 
 ### Client-side
 
-* The `InteractsWithQueryBuilder` mixin has been removed and is no longer needed.
-* The `Table` component no longer needs the `filters`, `search`, `columns`, and `on-update` properties.
-* When using a custom `thead` or `tbody` slot, you need to provide [the styling](https://github.com/protonemedia/inertiajs-tables-laravel-query-builder/blob/c8e21649ad372d309eeb62a8f771aa4c7cd0089e/js/Tailwind2/Table.vue#L1) manually.
-* When using a custom `thead`, the `showColumn` method has been renamed to `show`.
-* The `setTranslations` method is no longer part of the `Pagination` component, but should be imported.
-* The templates and logic of the components are not separated anymore. Use slots to inject your own implementations.
+-   The `InteractsWithQueryBuilder` mixin has been removed and is no longer needed.
+-   The `Table` component no longer needs the `filters`, `search`, `columns`, and `on-update` properties.
+-   When using a custom `thead` or `tbody` slot, you need to provide [the styling](https://github.com/protonemedia/inertiajs-tables-laravel-query-builder/blob/c8e21649ad372d309eeb62a8f771aa4c7cd0089e/js/Tailwind2/Table.vue#L1) manually.
+-   When using a custom `thead`, the `showColumn` method has been renamed to `show`.
+-   The `setTranslations` method is no longer part of the `Pagination` component, but should be imported.
+-   The templates and logic of the components are not separated anymore. Use slots to inject your own implementations.
 
 ## v2.1 Roadmap
 
-* Boolean filters
-* Date filters
-* Date range filters
-* Switch to Vite for the demo app
+-   Boolean filters
+-   Date filters
+-   Date range filters
+-   Switch to Vite for the demo app
 
 ## Changelog
 
@@ -485,17 +461,17 @@ Please see [CONTRIBUTING](CONTRIBUTING.md) for details.
 
 ## Other Laravel packages
 
-* [`Laravel Analytics Event Tracking`](https://github.com/protonemedia/laravel-analytics-event-tracking): Laravel package to easily send events to Google Analytics.
-* [`Laravel Blade On Demand`](https://github.com/protonemedia/laravel-blade-on-demand): Laravel package to compile Blade templates in memory.
-* [`Laravel Cross Eloquent Search`](https://github.com/protonemedia/laravel-cross-eloquent-search): Laravel package to search through multiple Eloquent models.
-* [`Laravel Eloquent Scope as Select`](https://github.com/protonemedia/laravel-eloquent-scope-as-select): Stop duplicating your Eloquent query scopes and constraints in PHP. This package lets you re-use your query scopes and constraints by adding them as a subquery.
-* [`Laravel Eloquent Where Not`](https://github.com/protonemedia/laravel-eloquent-where-not): This Laravel package allows you to flip/invert an Eloquent scope, or really any query constraint.
-* [`Laravel FFMpeg`](https://github.com/protonemedia/laravel-ffmpeg): This package provides an integration with FFmpeg for Laravel. The storage of the files is handled by Laravel's Filesystem.
-* [`Laravel Form Components`](https://github.com/protonemedia/laravel-form-components): Blade components to rapidly build forms with Tailwind CSS Custom Forms and Bootstrap 4. Supports validation, model binding, default values, translations, includes default vendor styling and fully customizable!
-* [`Laravel Mixins`](https://github.com/protonemedia/laravel-mixins): A collection of Laravel goodies.
-* [`Laravel Verify New Email`](https://github.com/protonemedia/laravel-verify-new-email): This package adds support for verifying new email addresses: when a user updates its email address, it won't replace the old one until the new one is verified.
-* [`Laravel Paddle`](https://github.com/protonemedia/laravel-paddle): Paddle.com API integration for Laravel with support for webhooks/events.
-* [`Laravel WebDAV`](https://github.com/protonemedia/laravel-webdav): WebDAV driver for Laravel's Filesystem.
+-   [`Laravel Analytics Event Tracking`](https://github.com/protonemedia/laravel-analytics-event-tracking): Laravel package to easily send events to Google Analytics.
+-   [`Laravel Blade On Demand`](https://github.com/protonemedia/laravel-blade-on-demand): Laravel package to compile Blade templates in memory.
+-   [`Laravel Cross Eloquent Search`](https://github.com/protonemedia/laravel-cross-eloquent-search): Laravel package to search through multiple Eloquent models.
+-   [`Laravel Eloquent Scope as Select`](https://github.com/protonemedia/laravel-eloquent-scope-as-select): Stop duplicating your Eloquent query scopes and constraints in PHP. This package lets you re-use your query scopes and constraints by adding them as a subquery.
+-   [`Laravel Eloquent Where Not`](https://github.com/protonemedia/laravel-eloquent-where-not): This Laravel package allows you to flip/invert an Eloquent scope, or really any query constraint.
+-   [`Laravel FFMpeg`](https://github.com/protonemedia/laravel-ffmpeg): This package provides an integration with FFmpeg for Laravel. The storage of the files is handled by Laravel's Filesystem.
+-   [`Laravel Form Components`](https://github.com/protonemedia/laravel-form-components): Blade components to rapidly build forms with Tailwind CSS Custom Forms and Bootstrap 4. Supports validation, model binding, default values, translations, includes default vendor styling and fully customizable!
+-   [`Laravel Mixins`](https://github.com/protonemedia/laravel-mixins): A collection of Laravel goodies.
+-   [`Laravel Verify New Email`](https://github.com/protonemedia/laravel-verify-new-email): This package adds support for verifying new email addresses: when a user updates its email address, it won't replace the old one until the new one is verified.
+-   [`Laravel Paddle`](https://github.com/protonemedia/laravel-paddle): Paddle.com API integration for Laravel with support for webhooks/events.
+-   [`Laravel WebDAV`](https://github.com/protonemedia/laravel-webdav): WebDAV driver for Laravel's Filesystem.
 
 ## Security
 
@@ -503,8 +479,8 @@ If you discover any security related issues, please email pascal@protone.media i
 
 ## Credits
 
-- [Pascal Baljet](https://github.com/protonemedia)
-- [All Contributors](../../contributors)
+-   [Pascal Baljet](https://github.com/protonemedia)
+-   [All Contributors](../../contributors)
 
 ## License
 

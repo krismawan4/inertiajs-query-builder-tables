@@ -1,6 +1,6 @@
 <?php
 
-namespace ProtoneMedia\LaravelQueryBuilderInertiaJs;
+namespace Krismawan4\LaravelQueryBuilderInertiaJs;
 
 use Illuminate\Contracts\Support\Arrayable;
 use Illuminate\Support\Arr;
@@ -15,8 +15,7 @@ class Filter implements Arrayable
         public bool $noFilterOption,
         public string $noFilterOptionLabel,
         public string $type
-    ) {
-    }
+    ) {}
 
     public function toArray()
     {

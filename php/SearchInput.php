@@ -1,6 +1,6 @@
 <?php
 
-namespace ProtoneMedia\LaravelQueryBuilderInertiaJs;
+namespace Krismawan4\LaravelQueryBuilderInertiaJs;
 
 use Illuminate\Contracts\Support\Arrayable;
 
@@ -10,8 +10,7 @@ class SearchInput implements Arrayable
         public string $key,
         public string $label,
         public ?string $value = null,
-    ) {
-    }
+    ) {}
 
     public function toArray()
     {

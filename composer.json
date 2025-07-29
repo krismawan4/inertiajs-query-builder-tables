@@ -1,18 +1,19 @@
 {
-    "name": "moshe-autoleadstar/protonemedia-inertiajs-tables-laravel-query-builder",
-    "description": "Inertia.js Front-end Components for Spatie's Laravel Query Builder",
-    "homepage": "https://github.com/protonemedia/inertiajs-tables-laravel-query-builder",
+    "name": "krismawan4/inertiajs-query-builder-tables",
+    "description": "Inertia.js Front-end Components for Spatie's Laravel Query Builder, with support for Laravel 12",
+    "homepage": "https://github.com/krismawan4/inertiajs-query-builder-tables",
     "type": "library",
     "license": "MIT",
     "authors": [
         {
-            "name": "Pascal Baljet",
-            "email": "pascal@protone.media"
+            "name": "Krismawan",
+            "email": "krismawan4@gmail.com"
         }
     ],
     "require": {
         "php": "^8.1|^8.2",
-        "illuminate/support": "^9.37|^10.0|^11.0|^12.0"
+        "illuminate/support": "^9.37|^10.0|^11.0|^12.0",
+        "spatie/laravel-query-builder": "^6.3"
     },
     "require-dev": {
         "friendsofphp/php-cs-fixer": "^3.8",
@@ -22,12 +23,12 @@
     },
     "autoload": {
         "psr-4": {
-            "ProtoneMedia\\LaravelQueryBuilderInertiaJs\\": "php"
+            "Krismawan4\\InertiaTables\\": "php"
         }
     },
     "autoload-dev": {
         "psr-4": {
-            "ProtoneMedia\\LaravelQueryBuilderInertiaJs\\Tests\\": "tests"
+            "Krismawan4\\InertiaTables\\Tests\\": "tests"
         }
     },
     "scripts": {
@@ -43,7 +44,7 @@
     "extra": {
         "laravel": {
             "providers": [
-                "ProtoneMedia\\LaravelQueryBuilderInertiaJs\\InertiaTableServiceProvider"
+                "Krismawan4\\InertiaTables\\InertiaTableServiceProvider"
             ]
         }
     }

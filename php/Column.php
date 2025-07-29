@@ -1,6 +1,6 @@
 <?php
 
-namespace ProtoneMedia\LaravelQueryBuilderInertiaJs;
+namespace Krismawan4\LaravelQueryBuilderInertiaJs;
 
 use Illuminate\Contracts\Support\Arrayable;
 
@@ -13,8 +13,7 @@ class Column implements Arrayable
         public bool $hidden,
         public bool $sortable,
         public bool|string $sorted
-    ) {
-    }
+    ) {}
 
     public function toArray()
     {
